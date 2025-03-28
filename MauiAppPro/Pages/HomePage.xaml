@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MauiAppPro.ViewsModel"
+             x:Class="MauiAppPro.Pages.HomePage"
+             Title="HomePage">
+    <ContentPage.BindingContext>
+        <vm:HomeViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <Frame CornerRadius="10" Padding="15" HasShadow="True" BackgroundColor="White">
+                <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto" ColumnDefinitions="*, Auto">
+                    <Frame Grid.Row="0" Grid.ColumnSpan="2" CornerRadius="50" Padding="0" HasShadow="True" BackgroundColor="White" HorizontalOptions="Center">
+                        <Image Source="person.png" WidthRequest="80" HeightRequest="80" />
+                    </Frame>
+                    <Label Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding FullName}" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" Margin="0, 10, 0, 0" />
+                    <Label Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding StudentId, StringFormat='รหัสนิสิต {0}'}" FontSize="16" HorizontalOptions="Center" />
+                    <Label Grid.Row="3" Text="{Binding Major, StringFormat='วิทยาศาสตรบัณฑิต (วท.บ.) {0}'}" FontSize="16" />
+                    <Label Grid.Row="3" Grid.Column="1" Text="{Binding Year, StringFormat='ชั้นปี {0}'}" FontSize="16" HorizontalOptions="End" />
+                    <Label Grid.Row="4" Text="สถานะ: นิสิตปัจจุบัน สภาพ..." FontSize="16" />
+                    <Label Grid.Row="4" Grid.Column="1" Text="เกรดเฉลี่ย 2.40" FontSize="16" HorizontalOptions="End" />
+                </Grid>
+            </Frame>
+            <Frame CornerRadius="10" Padding="15" HasShadow="True" BackgroundColor="White">
+                <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, *">
+                    <Label Grid.Row="0" Grid.Column="0" Text="หน่วยกิต" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="ผ่าน" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Grid.Row="0" Grid.Column="2" Text="คงเหลือ" FontSize="16" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label Grid.Row="1" Grid.Column="0" Text="หลักสูตร: 137" FontSize="16" HorizontalOptions="Center" />
+                    <Label Grid.Row="1" Grid.Column="1" Text="99" FontSize="16" HorizontalOptions="Center" />
+                    <Label Grid.Row="1" Grid.Column="2" Text="38" FontSize="16" HorizontalOptions="Center" />
+                </Grid>
+            </Frame>
+            <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="*, *">
+                <Frame Grid.Row="0" Grid.Column="0" CornerRadius="10" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Button Text="ดูโปรไฟล์" Command="{Binding NavigateToProfilePageCommand}" />
+                </Frame>
+                <Frame Grid.Row="0" Grid.Column="1" CornerRadius="10" Padding="10" HasShadow="True" BackgroundColor="White">
+                    <Button Text="ลงทะเบียนภาคเรียน" Command="{Binding NavigateToCurrentTermRegistrationPageCommand}" />
+                </Frame>
+                <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" CornerRadius="10" Padding="10" HasShadow="True" BackgroundColor="White" HorizontalOptions="Center">
+                    <Button Text="ค้นหาและลงทะเบียนวิชา" Command="{Binding NavigateToSearchCoursesPageCommand}" />
+                </Frame>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
