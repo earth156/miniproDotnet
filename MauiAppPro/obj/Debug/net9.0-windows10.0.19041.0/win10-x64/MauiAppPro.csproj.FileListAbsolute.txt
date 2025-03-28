@@ -473,3 +473,4 @@ D:\65091\dotnetmini\MauiAppPro\MauiAppPro\bin\Debug\net9.0-windows10.0.19041.0\w
 D:\65091\dotnetmini\MauiAppPro\MauiAppPro\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\users.json
 D:\65091\dotnetmini\MauiAppPro\MauiAppPro\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll
 D:\65091\dotnetmini\MauiAppPro\MauiAppPro\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Mvvm.dll
+D:\65091\dotnetmini\MauiAppPro\MauiAppPro\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiAppPro.sourcelink.json
